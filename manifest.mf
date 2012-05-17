@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.collectd.visualvm
+OpenIDE-Module-Install: org/collectd/visualvm/Installer.class
+OpenIDE-Module-Localizing-Bundle: org/collectd/visualvm/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
