@@ -1,20 +1,19 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.collectd.visualvm;
 
+import com.sun.tools.visualvm.application.type.ApplicationTypeFactory;
 import org.openide.modules.ModuleInstall;
 
 public class Installer extends ModuleInstall {
+    
+    private final static JcollectdApplicationTypeFactory INSTANCE = new JcollectdApplicationTypeFactory();
 
     @Override
     public void restored() {
-        JcollectdViewProvider.initialize();
+        ApplicationTypeFactory.getDefault().registerProvider(INSTANCE);
     }
 
     @Override
     public void uninstalled() {
-        JcollectdViewProvider.unregister();
+        ApplicationTypeFactory.getDefault().unregisterProvider(INSTANCE);
     }
 }
